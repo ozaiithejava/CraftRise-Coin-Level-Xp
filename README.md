@@ -1,7 +1,8 @@
 
 ---
 
-# CraftRise Coin Level XP Plugin
+# CraftRise-EcoSystem-Plugin
+
 
 ![CraftRise Logo](https://www.speedrun.com/static/game/kdkzwpgd/cover.png?v=85a7caf)
 ![Spigot Logo](https://static.spigotmc.org/img/spigot-og.png)
