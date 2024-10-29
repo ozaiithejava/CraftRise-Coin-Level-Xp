@@ -1,82 +1,98 @@
+
+---
+
 # CraftRise Coin Level XP Plugin
 
 ![CraftRise Logo](https://www.speedrun.com/static/game/kdkzwpgd/cover.png?v=85a7caf)
 ![Spigot Logo](https://static.spigotmc.org/img/spigot-og.png)
 
-**CraftRise Coin Level XP Plugin**, CraftRise sunucularında oyun oynarken oyuncuların seviye ve deneyim puanlarını takip etmek için kullanılan bir eklentidir. Bu eklenti ile ilgili önemli bilgilere ve yasal uyarılara aşağıda yer verilmiştir.
+**CraftRise Coin Level XP Plugin** is a powerful tool designed for CraftRise servers, allowing for the tracking of player levels and experience points while they engage in gameplay. Below are important details and legal notices regarding the usage of this plugin.
 
-## Kullanım
+## Usage
 
-Bu eklentiyi kullanmak için spigot ve papi gereklidir. Plugins klasörüne atın, jar'ı çalıştırın, sunucuyu kapatın, sonra config.yml gelecek, onu düzenleyin ve MySQL bilgilerinizi girin.
+To utilize this plugin, you must have Spigot and PlaceholderAPI installed. Follow these steps to get started:
 
-## Yasal Uyarı
+1. Place the JAR file into your `plugins` directory.
+2. Start your server to generate the `config.yml` file.
+3. Stop the server and edit the `config.yml` file to enter your MySQL connection details.
 
-Bu eklenti, yalnızca kişisel ve eğlence amaçları için kullanılmalıdır. Bu eklenti ile elde edilen herhangi bir avantaj veya haksız kazanç cezalandırılabilir ve yasal işlemler başlatılabilir.
+## Legal Notice
 
-Eklentinin izinsiz kopyalanması, dağıtılması veya satılması yasaktır.
+This plugin is intended for personal and entertainment purposes only. Any advantages or unfair gains obtained through its use may lead to penalties and legal actions.
 
-## PlaceHolders Kullanımı:
+Unauthorized copying, distribution, or sale of this plugin is strictly prohibited.
 
-1. PlaceholderAPI'nin yüklü olduğundan emin olun.
-2. Oyunculara özel metinleri göstermek için, bu sınıfın sağladığı placeholder'ları kullanabilirsiniz.
+## Placeholder Usage
 
-**PlaceHolders:**
-- `%expercoins_xp%`: Oyuncunun XP'sini gösterir.
-- `%expercoins_coin%`: Oyuncunun coin miktarını gösterir.
-- `%expercoins_level%`: Oyuncunun seviyesini gösterir.
-- `%expercoins_join_date%`: Oyuncunun katılma tarihini gösterir.
-- `%expercoins_top_coin%`: En çok coine sahip oyuncuların listesini gösterir.
-- `%expercoins_top_xp%`: En çok XP'e sahip oyuncuların listesini gösterir.
-- `%expercoins_top_level%`: En yüksek seviyede oyuncuların listesini gösterir.
+1. Ensure PlaceholderAPI is installed.
+2. Use the placeholders provided by this plugin to display player-specific information.
 
-## Coin Api Kullanımı:
+### Available Placeholders:
+- `%expercoins_xp%`: Displays the player's current XP.
+- `%expercoins_coin%`: Displays the player's current coin balance.
+- `%expercoins_level%`: Displays the player's current level.
+- `%expercoins_join_date%`: Displays the player's join date.
+- `%expercoins_top_coin%`: Displays the leaderboard of players with the most coins.
+- `%expercoins_top_xp%`: Displays the leaderboard of players with the highest XP.
+- `%expercoins_top_level%`: Displays the leaderboard of players at the highest levels.
 
-- `CoinManager.getPlayerCoins(playername)`: Coin sayısını getirir.
-- `CoinManager.setPlayerCoins(playername, miktar)`: Coin'i belirtilen sayıya ayarlar.
-- `CoinManager.resetPlayerCoins(playername)`: Coin sıfırlama.
-- `CoinManager.addPlayerCoins(playername, miktar)`: Coin ekleme.
-- `CoinManager.removePlayerCoins(playername, miktar)`: Coin eksiltme.
-- `CoinManager.sendPlayerCoins(senderName, receiverName, coinsToSend)`: Coin yollama.
-- `CoinManager.getTopPlayerCoins(miktar)`: En yüksek coin miktarına sahip oyuncuları getirir.
+## Coin API Usage
 
-## Level Api Kullanımı:
+The following methods are available for managing coins:
 
-- `LevelManager.getPlayerLevel(playername)`: Level sayısını getirir.
-- `LevelManager.setPlayerLevel(playername, miktar)`: Level'i belirtilen sayıya ayarlar.
-- `LevelManager.resetPlayerLevel(playername)`: Level sıfırlama.
-- `LevelManager.addPlayerLevel(playername, miktar)`: Level ekleme.
-- `LevelManager.removePlayerLevel(playername, miktar)`: Level eksiltme.
-- `LevelManager.getTopPlayersLevel(miktar)`: En yüksek level miktarına sahip oyuncuları getirir.
+- `CoinManager.getPlayerCoins(playerName)`: Retrieves the player's coin balance.
+- `CoinManager.setPlayerCoins(playerName, amount)`: Sets the player's coin balance to the specified amount.
+- `CoinManager.resetPlayerCoins(playerName)`: Resets the player's coin balance.
+- `CoinManager.addPlayerCoins(playerName, amount)`: Adds coins to the player's balance.
+- `CoinManager.removePlayerCoins(playerName, amount)`: Deducts coins from the player's balance.
+- `CoinManager.sendPlayerCoins(senderName, receiverName, coinsToSend)`: Transfers coins from one player to another.
+- `CoinManager.getTopPlayerCoins(limit)`: Retrieves the top players based on their coin balance.
 
-## Exp Api Kullanımı:
+## Level API Usage
 
-- `ExpManager.getPlayerXp(playername)`: Level sayısını getirir.
-- `ExpManager.setPlayerXp(playername, miktar)`: Level'i belirtilen sayıya ayarlar.
-- `ExpManager.resetPlayerXp(playername)`: Level sıfırlama.
-- `ExpManager.addPlayerXp(playername, miktar)`: Level ekleme.
-- `ExpManager.removePlayerXp(playername, miktar)`: Level eksiltme.
-- `ExpManager.getTopPlayerXP(miktar)`: En yüksek level miktarına sahip oyuncuları getirir.
+The following methods are available for managing player levels:
 
-## Exp Sistemi:
+- `LevelManager.getPlayerLevel(playerName)`: Retrieves the player's current level.
+- `LevelManager.setPlayerLevel(playerName, amount)`: Sets the player's level to the specified amount.
+- `LevelManager.resetPlayerLevel(playerName)`: Resets the player's level.
+- `LevelManager.addPlayerLevel(playerName, amount)`: Increases the player's level.
+- `LevelManager.removePlayerLevel(playerName, amount)`: Decreases the player's level.
+- `LevelManager.getTopPlayersLevel(limit)`: Retrieves the top players based on their level.
 
-Exp sistemi 100xp de 1 level artacak şekilde düzenlenmiştir, istediğiniz gibi düzenleyebilirsiniz.
+## Experience API Usage
 
-## Komutlar:
+The following methods are available for managing player experience:
 
-- **/coinim**: Coin miktarını gösterir.
-- **/topcoin**: En yüksek coinleri gösterir.
-- **/expim**: XP'yi gösterir.
-- **/c**: Coin admin komutları.
-- **/l**: Level admin komutları.
-- **/e**: XP admin komutları.
-- **/p**: Profil admin komutları.
-- **/fipcoin**: Yazı tura.
-- **/oduller**: Ödüller.
-- **/coinyolla**: Coin yollama.
-- **/toplevel**: En yüksek level.
-- **/profil**: Profiliniz.
+- `ExpManager.getPlayerXp(playerName)`: Retrieves the player's current XP.
+- `ExpManager.setPlayerXp(playerName, amount)`: Sets the player's XP to the specified amount.
+- `ExpManager.resetPlayerXp(playerName)`: Resets the player's XP.
+- `ExpManager.addPlayerXp(playerName, amount)`: Increases the player's XP.
+- `ExpManager.removePlayerXp(playerName, amount)`: Decreases the player's XP.
+- `ExpManager.getTopPlayerXP(limit)`: Retrieves the top players based on their XP.
+
+## Experience System
+
+The experience system is designed to increase levels every 100 XP earned. This can be adjusted as per your requirements.
+
+## Commands
+
+The following commands are available for players and administrators:
+
+- **/coinim**: Displays the player's current coin balance.
+- **/topcoin**: Displays the leaderboard of players with the highest coin balances.
+- **/expim**: Displays the player's current XP.
+- **/c**: Admin commands related to coins.
+- **/l**: Admin commands related to levels.
+- **/e**: Admin commands related to XP.
+- **/p**: Admin commands related to profiles.
+- **/fipcoin**: Performs a coin flip.
+- **/oduller**: Displays available rewards.
+- **/coinyolla**: Sends coins to another player.
+- **/toplevel**: Displays the leaderboard of the highest levels.
+- **/profil**: Displays the player's profile.
 
 ---
 
-**CraftRise Coin Level XP Plugin**, Ozaii ve ekibi tarafından geliştirilmiştir ve tüm hakları saklıdır. İzinsiz kullanım veya dağıtım durumunda yasal işlemler başlatılacaktır.
+**CraftRise Coin Level XP Plugin** is developed by Ozaii and his team. All rights reserved. Legal action will be pursued for unauthorized use or distribution.
 
+---
